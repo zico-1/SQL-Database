@@ -1,0 +1,56 @@
+
+CREATE DATABASE `Employee_Database`; 
+USE `Employee_Database`;
+
+
+CREATE TABLE `Employee` (
+  `EID' int(10),
+  `Name` varchar(50),
+  'Gender' varchar(50),
+  'Address' varchar(50),
+  'Age' int(10),
+  PRIMARY KEY (`EID`)
+);
+INSERT INTO `Employee` VALUES (1,'Charity Obukomena','Female','22 Ugbomro',25);
+INSERT INTO `Employee` VALUES (2,'Kelechi','Male','10 Lekki',38);
+INSERT INTO `Employee` VALUES (3,'Joy','Female','13 Aja',37);
+
+
+CREATE TABLE `Job_info` (
+  `JID` varchar(10),
+  `EID` int(10),
+  `Department` varchar(50),
+  `Employee_status` varchar(50),
+  `Job_title` varchar(50),
+  `Recruitment_Date` varchar(50),
+  PRIMARY KEY (`JID`),
+  KEY `FK_Employee_id` (`EID`)
+);
+INSERT INTO `Job_info` VALUES ('O1CO',1,'IT','Working','Database Manager','1-1-2018');
+INSERT INTO `Job_info` VALUES ('02KE',2,'E&S','Working','Mechanical Engineer','4-5-2019');
+INSERT INTO `Job_info` VALUES ('03JO',3,'E&S','Working','Chemical Engineer','3-4-2020');
+
+
+CREATE TABLE `Professional` (
+  `JID` varchar(50),
+  `Employee_review` varchar(50),
+  `Training` varchar(50),
+  `Qualification` varchar(50),
+  KEY `FK_Job_info_id` (`JID`)
+);
+INSERT INTO `Professional` VALUES ('01CO','2-7-2020','MongoDb','Bsc');
+INSERT INTO `Professional` VALUES ('02KE','2-7-2020','Pipeline UTM','Msc');
+INSERT INTO `Professional` VALUES ('03JO','2-7-2021','Lube blending plants UTM','Msc');
+
+CREATE TABLE `Payroll` (
+  `JID` varchar(50),
+  `EID` int(10),
+  `Bank_Details` varchar(50),
+  `Salary_Amount` varchar(50),
+  `Time_sheet` varchar(50),
+  KEY `FK_Job_info_id` (`JID`),
+  KEY `FK_Employee_id` (`EID`)
+);
+INSERT INTO `Salary_info` VALUES ('O1CO',1,'UBA',1000000,'120 hours');
+INSERT INTO `Salary_info` VALUES ('02KE',2,'UBA',500000,'200 hours');
+INSERT INTO `Salary_info` VALUES ('03JO',3,'UBA',700000,'180 hours');
