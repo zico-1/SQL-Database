@@ -1,0 +1,105 @@
+use EmployeeDatabase
+
+db.createCollection('Employee')
+
+db.Employee.insertMany([
+ {
+   employeeId: '1',
+   Name: 'Charity Obukomena',
+   Gender: 'Female',
+   Address: '22 Ugbomro',
+   Age: '25'
+ },
+ {
+   employeeId: '2',
+   Name: 'Kelechi',
+   Gender: 'Male',
+   Address: '10 Lekki',
+   Age: '38'
+ },
+ {
+   employeeId: '3',
+   Name: 'Joy',
+   Gender: 'Female',
+   Address: '13 Aja',
+   Age: '37'
+ }
+])
+
+db.createCollection('JobInfo')
+
+db.JobInfo.insertMany([
+ {
+   JobInfo_id: 'O1CO',
+   EmployeeId: '1',
+   Department: 'IT',
+   Employee_status: 'Working',
+   Job_title: '1-1-2018',
+   Recruitment_date: '1-1-2021'
+ },
+ {
+   JobInfo_id: '02EJ',
+   EmployeeId: '2',
+   Department: 'E&S',
+   Employee_status: 'On leave',
+   Job_title: 'Mechanical Engineer',
+   Recruitment_date: '4-5-2019'
+ },
+ {
+   JobInfo_id: '03JO',
+   EmployeeId: '3',
+   Department: 'E&S',
+   Employee_status: 'Working',
+   Job_title: 'Chemical Engineer',
+   Recruitment_date: '3-4-2020'
+ }
+])
+
+db.createCollection('Payroll_')
+
+db.Payroll_.insertMany([
+ {
+   JobInfo_id: 'O1CO',
+   EmployeeId: '1',
+   Bank_Details: 'UBA',
+   Salary_Amt: '1000000',
+   Timesheet: '120 hours'
+ },
+ {
+   Jobinfo_id: '02KE',
+   EmployeeId: '2',
+   Bank_Details: 'UBA',
+   Salary_Amt: '500000',
+   Timesheet: '200 hours'
+ },
+ {
+   Jobinfo_id: '03JO',
+   EmployeeId: '3',
+   Bank_Details: 'UBA',
+   Salary_Amt: '700000',
+   Timesheet: '180 hours'
+ }
+])
+
+db.createCollection('Professional')
+
+db.Professional.insertMany([
+ {
+   JobInfo_id: '01CO',
+   Employee_review: '2-7-2020',
+   Training: 'MongoDb',
+   Qualification: 'Bsc'
+ },
+ {
+   JobInfo_id: '02KE',
+   Employee_review: '2-7-2020',
+   Training: 'Pipeline UTM',
+   Qualification: 'Msc'
+ },
+ {
+   JobInfo_id: '03JO',
+   Employee_review: '2-7-2021',
+   Training: 'Lube blending plants UTM',
+   Qualification: 'Msc'
+ }
+])
